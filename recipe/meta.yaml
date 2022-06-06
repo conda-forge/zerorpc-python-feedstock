@@ -10,7 +10,7 @@ source:
   sha256: d2ee247a566fc703f29c277d767f6f61f1e12f76d0402faea4bd815f32cbf37f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - zerorpc = zerorpc.cli:main
@@ -25,7 +25,7 @@ requirements:
     - future
     - gevent >=1.1
     - msgpack-python >=0.5.2
-    - pyzmq >=13.1.0
+    - pyzmq >=13.1.0,!=23.0.0
 
 test:
   imports:
