@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/zerorpc/zerorpc-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/zerorpc/zerorpc-{{ version }}.tar.gz
   sha256: d2ee247a566fc703f29c277d767f6f61f1e12f76d0402faea4bd815f32cbf37f
 
 build:
-  number: 1
+  number: 2
   noarch: python
   entry_points:
     - zerorpc = zerorpc.cli:main
@@ -19,9 +19,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - future
     - gevent >=1.1
     - msgpack-python >=0.5.2
@@ -35,6 +35,7 @@ test:
     - zerorpc --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/0rpc/zerorpc-python
