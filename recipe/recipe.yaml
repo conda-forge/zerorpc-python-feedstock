@@ -36,14 +36,13 @@ tests:
   - python:
       imports:
         - zerorpc
-      python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}.*
-    script:
-      - pip check
+      python_version: ["${{ python_min }}.*", "3.*"]
+      pip_check: true
+  - script:
       - zerorpc --help
+    requirements:
+      run:
+        - python ${{ python_min }}.*
 
 about:
   summary: zerorpc is a flexible RPC based on zeromq.
