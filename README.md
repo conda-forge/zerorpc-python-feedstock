@@ -14,7 +14,6 @@ Development: https://github.com/0rpc/zerorpc-python
 zerorpc is a flexible RPC implementation based on zeromq and messagepack.
 Service APIs exposed with zerorpc are called "zeroservices".
 
-
 Current build status
 ====================
 
